@@ -3,15 +3,15 @@ postmates-node
 
 > A node.js client for the Postmates [API](https://postmates.com/developer/docs).
 
-## Examples
+### Examples
 
-## API
+TODO
 
-### new Postmates(customerId, apiKey)
+### API
+
+#### new Postmates(customerId, apiKey)
 
 Create a new Postmates instance that can get quotes, create deliveries, get delivery details, and cancel deliveries.
-
-### Interact
 
 #### .quote(object)
 
@@ -26,7 +26,7 @@ Get a Delivery Quote. Parameter `object` required:
 
 Sample DeliveryQuote response:
 
-```json
+```javascript
 {
   kind: "delivery_quote",
   id: "dqt_qUdje83jhdk",
@@ -66,7 +66,7 @@ Retrieve a Delivery. Parameter `deliveryId` required.
 
 Sample Delivery response:
 
-```
+```javascript
 {
   "kind": "delivery",
   "created": "2014-08-26T10:04:03Z",
