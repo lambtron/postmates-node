@@ -3,9 +3,45 @@ postmates-node
 
 > A node.js client for the Postmates [API](https://postmates.com/developer/docs).
 
+### Getting Started
+
+Install the module:
+```bash
+$ npm install --save postmates
+```
+
+Create an instance of `Postmates` that you can use to interact with their endpoints:
+```javascript
+var Postmates = require('postmates');
+var postmates = new Postmates('yourCustomerId', 'yourAPIkey');
+```
+
 ### Examples
 
-TODO
+Get a quote:
+```javascript
+
+```
+
+Create a delivery:
+```javascript
+
+```
+
+Get delivery details:
+```javascript
+
+```
+
+Get all deliveries:
+```javascript
+
+```
+
+Cancel a delivery:
+```javascript
+
+```
 
 ### API
 
