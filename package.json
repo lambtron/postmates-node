@@ -1,27 +1,25 @@
 {
-  "name": "postmates-node",
-  "repository": "git://github.com/lambtron/postmates-node",
-  "version": "0.0.1",
+  "name": "postmates",
+  "version": "1.0.0",
   "description": "A node.js client for the Postmates API.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lambtron/postmates-node.git"
+  },
   "keywords": [
     "postmates",
     "delivery",
     "courier",
     "node"
   ],
-  "main": "lib/index.js",
-  "dependencies": {
-    "superagent": "~0.16.0",
+  "author": "Andy Jiang <andyjiang@gmail.com> (http://www.andyjiang.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lambtron/postmates-node/issues"
   },
-  "devDependencies": {
-    "mocha": "1.8.1",
-    "express": "~3.4.8",
-    "http-proxy": "~1.3.0"
-  },
-  "engines": {
-    "node": ">= 0.8.x"
-  },
-  "scripts": {
-    "test": "make test"
-  }
+  "homepage": "https://github.com/lambtron/postmates-node"
 }
