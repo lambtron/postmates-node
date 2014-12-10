@@ -1,7 +1,125 @@
 postmates-node
 ==============
 
-A node.js client for the Postmates [API](https://postmates.com/developer/docs).
+> A node.js client for the Postmates [API](https://postmates.com/developer/docs).
+
+## Examples
+
+## API
+
+### new Postmates(customerId, apiKey)
+
+Create a new Postmates instance that can get quotes, create deliveries, get delivery details, and cancel deliveries.
+
+### Interact
+
+#### .quote(object)
+
+Get a Delivery Quote. Parameter `object` required:
+
+```javascript
+{
+  pickup_address: "20 McAllister St, San Francisco, CA",
+  dropoff_address: "101 Market St, San Francisco, CA"
+}
+```
+
+Sample DeliveryQuote response:
+
+```json
+{
+  kind: "delivery_quote",
+  id: "dqt_qUdje83jhdk",
+  created: "2014-08-26T10:04:03Z",
+  expires: "2014-08-26T10:09:03Z",
+  fee: 799,
+  currency: "usd",
+  dropoff_eta: "2014-08-26T12:15:03Z",
+  duration: 60
+}
+```
+
+#### .new(object)
+
+Create a Delivery. Parameter `object` required:
+
+```javascript
+{
+  manifest: "a box of kittens",
+  pickup_name: "The Warehouse",
+  pickup_address: "20 McAllister St, San Francisco, CA",
+  pickup_phone_number: "555-555-5555",
+  pickup_business_name: "Optional Pickup Business Name, Inc.",
+  pickup_notes: "Optional note that this is Invoice #123",
+  dropoff_name: "Alice",
+  dropoff_address: "101 Market St, San Francisco, CA",
+  dropoff_phone_numbe: "415-555-1234",
+  dropoff_business_name: "Optional Dropoff Business Name, Inc.",
+  dropoff_notes: "Optional note to ring the bell",
+  quote_id: "qUdje83jhdk"
+}
+```
+
+#### .get(deliveryId)
+
+Retrieve a Delivery. Parameter `deliveryId` required.
+
+Sample Delivery response:
+
+```
+{
+  "kind": "delivery",
+  "created": "2014-08-26T10:04:03Z",
+  "updated": "2014-08-26T11:21:16Z",
+  "status": "pickup",
+  "complete": false,
+  "pickup_eta": "2014-08-26T10:16:00Z",
+  "dropoff_eta": "2014-08-26T10:29:00Z",
+  "dropoff_deadline": "2014-08-26T10:45:00Z",
+  "quote_id": "qUdje83jhdk",
+  "fee": 799,
+  "currency": "usd",
+  "manifest": {
+    "description": "10kg cardboard box",
+  },
+  "pickup": {
+    "name": "The Warehouse",
+    "phone_number": "5555555555",
+    "address": "20 McAllister St, San Francisco, CA 94102",
+    "notes": "Invoice #123",
+    "location" : {
+        "lat" : 37.781116,
+        "lng" : -122.412339
+    },
+  },
+  "dropoff": {
+    "name": "Alice Customer"
+    "phone_number": "4155555555",
+    "address": "101 Market St, San Francisco, CA 94105",
+    "notes": "Ring the bell, meow loudly.",
+    "location" : {
+        "lat" : 37.793274,
+        "lng" : -122.395934
+    },
+  },
+  "courier": {
+    "name": "Robo Courier",
+    "location" : {
+        "lat" : 37.42291810,
+        "lng" : -122.08542120
+    },
+    "img_href": "https://images.postmates.com/06c9a53c-f89f-4eac-8861-60e34039d9ea/121.jpg"
+  }
+}
+```
+
+#### .list(filter)
+
+Retrieve all deliveries for a customer. Parameter `filter` is optional. An example of `filter` is 'ongoing', which would return a list of all deliveries with statuses 'ongoing'.
+
+#### .cancel(deliveryId)
+
+Cancel an ongoing delivery. Parameter `deliveryId` required.
 
 ## License (MIT)
 
