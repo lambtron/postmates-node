@@ -49,7 +49,7 @@ Cancel a delivery:
 
 Create a new Postmates instance that can get quotes, create deliveries, get delivery details, and cancel deliveries.
 
-#### .quote(object)
+#### .quote(object, fn)
 
 Get a Delivery Quote. Parameter `object` required:
 
@@ -75,7 +75,7 @@ Sample DeliveryQuote response:
 }
 ```
 
-#### .new(object)
+#### .new(object, fn)
 
 Create a Delivery. Parameter `object` required:
 
@@ -96,7 +96,7 @@ Create a Delivery. Parameter `object` required:
 }
 ```
 
-#### .get(deliveryId)
+#### .get(deliveryId, fn)
 
 Retrieve a Delivery. Parameter `deliveryId` required.
 
@@ -149,11 +149,11 @@ Sample Delivery response:
 }
 ```
 
-#### .list(filter)
+#### .list(filter, fn)
 
 Retrieve all deliveries for a customer. Parameter `filter` is optional. An example of `filter` is 'ongoing', which would return a list of all deliveries with statuses 'ongoing'.
 
-#### .cancel(deliveryId)
+#### .cancel(deliveryId, fn)
 
 Cancel an ongoing delivery. Parameter `deliveryId` required.
 
