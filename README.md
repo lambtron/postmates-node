@@ -20,27 +20,57 @@ var postmates = new Postmates('yourCustomerId', 'yourAPIkey');
 
 Get a quote:
 ```javascript
+var delivery = {
+  pickup_address: "20 McAllister St, San Francisco, CA",
+  dropoff_address: "101 Market St, San Francisco, CA"
+};
 
+postmates.quote(delivery, function(err, res) {
+  console.log(res.body.fee); // 799
+});
 ```
 
 Create a delivery:
 ```javascript
+var delivery = {
+  manifest: "a box of kittens",
+  pickup_name: "The Warehouse",
+  pickup_address: "20 McAllister St, San Francisco, CA",
+  pickup_phone_number: "555-555-5555",
+  pickup_business_name: "Optional Pickup Business Name, Inc.",
+  pickup_notes: "Optional note that this is Invoice #123",
+  dropoff_name: "Alice",
+  dropoff_address: "101 Market St, San Francisco, CA",
+  dropoff_phone_numbe: "415-555-1234",
+  dropoff_business_name: "Optional Dropoff Business Name, Inc.",
+  dropoff_notes: "Optional note to ring the bell",
+  quote_id: "qUdje83jhdk"
+};
 
+postmates.new(delivery, function(err, res) {
+  // `res`
+});
 ```
 
 Get delivery details:
 ```javascript
-
+postmates.get('qUdje83jhdk', function(err, res) {
+  console.log(res.body.status); // "pickup"
+});
 ```
 
 Get all deliveries:
 ```javascript
-
+postmates.list('ongoing', function(err, res) {
+  // `res` is an array of Delivery objects
+});
 ```
 
 Cancel a delivery:
 ```javascript
-
+postmates.cancel('qUdje83jhdk', function(err, res) {
+  // `res`
+});
 ```
 
 ### API
