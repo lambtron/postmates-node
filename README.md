@@ -134,47 +134,47 @@ Sample Delivery response:
 
 ```javascript
 {
-  "kind": "delivery",
-  "created": "2014-08-26T10:04:03Z",
-  "updated": "2014-08-26T11:21:16Z",
-  "status": "pickup",
-  "complete": false,
-  "pickup_eta": "2014-08-26T10:16:00Z",
-  "dropoff_eta": "2014-08-26T10:29:00Z",
-  "dropoff_deadline": "2014-08-26T10:45:00Z",
-  "quote_id": "qUdje83jhdk",
-  "fee": 799,
-  "currency": "usd",
-  "manifest": {
-    "description": "10kg cardboard box",
+  kind: "delivery",
+  created: "2014-08-26T10:04:03Z",
+  updated: "2014-08-26T11:21:16Z",
+  status: "pickup",
+  complete: false,
+  pickup_eta: "2014-08-26T10:16:00Z",
+  dropoff_eta: "2014-08-26T10:29:00Z",
+  dropoff_deadline: "2014-08-26T10:45:00Z",
+  quote_id: "qUdje83jhdk",
+  fee: 799,
+  currency: "usd",
+  manifest: {
+    description: "10kg cardboard box",
   },
-  "pickup": {
-    "name": "The Warehouse",
-    "phone_number": "5555555555",
-    "address": "20 McAllister St, San Francisco, CA 94102",
-    "notes": "Invoice #123",
-    "location" : {
-        "lat" : 37.781116,
-        "lng" : -122.412339
+  pickup: {
+    name: "The Warehouse",
+    phone_number: "5555555555",
+    address: "20 McAllister St, San Francisco, CA 94102",
+    notes: "Invoice #123",
+    location: {
+      lat: 37.781116,
+      lng: -122.412339
     },
   },
-  "dropoff": {
-    "name": "Alice Customer"
-    "phone_number": "4155555555",
-    "address": "101 Market St, San Francisco, CA 94105",
-    "notes": "Ring the bell, meow loudly.",
-    "location" : {
-        "lat" : 37.793274,
-        "lng" : -122.395934
+  dropoff: {
+    name: "Alice Customer"
+    phone_number: "4155555555",
+    address: "101 Market St, San Francisco, CA 94105",
+    notes: "Ring the bell, meow loudly.",
+    location: {
+      lat: 37.793274,
+      lng: -122.395934
     },
   },
-  "courier": {
-    "name": "Robo Courier",
-    "location" : {
-        "lat" : 37.42291810,
-        "lng" : -122.08542120
+  courier: {
+    name: "Robo Courier",
+    location: {
+        lat: 37.42291810,
+        lng: -122.08542120
     },
-    "img_href": "https://images.postmates.com/06c9a53c-f89f-4eac-8861-60e34039d9ea/121.jpg"
+    img_href: "https://images.postmates.com/06c9a53c-f89f-4eac-8861-60e34039d9ea/121.jpg"
   }
 }
 ```
