@@ -1,7 +1,13 @@
 
-1.0.1 / 2014-12-10
+1.0.2 / 2014-12-10
 ==================
 
+ * fixed readme styling
+ * added comments
+ * fixing up test directory
+ * fixed some stuffs
+ * fixed readme docs
+ * updated
  * added filter as optional parameter
  * added more examples
  * added set POST type to form urlencoded
@@ -26,7 +32,7 @@
  * added basic structure
  * Initial commit
 
-. / 2014-12-10
+1.0.1 / 2014-12-10
 ==================
 
  * added filter as optional parameter
