@@ -48,7 +48,7 @@ var delivery = {
 };
 
 postmates.new(delivery, function(err, res) {
-  // `res`
+  // `res.body`
 });
 ```
 
@@ -62,14 +62,14 @@ postmates.get('qUdje83jhdk', function(err, res) {
 Get all deliveries:
 ```javascript
 postmates.list('ongoing', function(err, res) {
-  // `res` is an array of Delivery objects
+  // `res.body` is an array of Delivery objects
 });
 ```
 
 Cancel a delivery:
 ```javascript
 postmates.cancel('qUdje83jhdk', function(err, res) {
-  // `res`
+  // `res.body`
 });
 ```
 
