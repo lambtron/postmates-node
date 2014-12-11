@@ -41,7 +41,7 @@ var delivery = {
   pickup_notes: "Optional note that this is Invoice #123",
   dropoff_name: "Alice",
   dropoff_address: "101 Market St, San Francisco, CA",
-  dropoff_phone_numbe: "415-555-1234",
+  dropoff_phone_number: "415-555-1234",
   dropoff_business_name: "Optional Dropoff Business Name, Inc.",
   dropoff_notes: "Optional note to ring the bell",
   quote_id: "qUdje83jhdk"
@@ -119,7 +119,7 @@ Create a Delivery. Parameter `object` required:
   pickup_notes: "Optional note that this is Invoice #123",
   dropoff_name: "Alice",
   dropoff_address: "101 Market St, San Francisco, CA",
-  dropoff_phone_numbe: "415-555-1234",
+  dropoff_phone_number: "415-555-1234",
   dropoff_business_name: "Optional Dropoff Business Name, Inc.",
   dropoff_notes: "Optional note to ring the bell",
   quote_id: "qUdje83jhdk"
@@ -182,6 +182,50 @@ Sample Delivery response:
 #### .list(filter, fn)
 
 Retrieve all deliveries for a customer. Parameter `filter` is optional. An example of `filter` is 'ongoing', which would return a list of all deliveries with statuses 'ongoing'.
+
+Sample response:
+
+```javascript
+{ url: '/v1/customers/cus_JVGEOrY-m6BTMk/deliveries/',
+  total_count: 2,
+  object: 'list',
+  data:
+   [ { status: 'pickup',
+       dropoff: [Object],
+       updated: '2014-12-11T04:02:15Z',
+       fee: 850,
+       quote_id: 'dqt_K7ZMDY1grpRfX-',
+       complete: false,
+       courier: [Object],
+       created: '2014-12-11T04:02:11Z',
+       kind: 'delivery',
+       manifest: [Object],
+       currency: 'usd',
+       pickup: [Object],
+       dropoff_deadline: '2014-12-11T05:02:11Z',
+       live_mode: false,
+       pickup_eta: '2014-12-11T04:21:03Z',
+       dropoff_eta: '2014-12-11T04:35:49Z',
+       id: 'del_K7ZMFsDXNzKEdk' },
+     { status: 'pickup',
+       dropoff: [Object],
+       updated: '2014-12-11T04:02:16Z',
+       fee: 850,
+       quote_id: 'dqt_K7ZLwn80kzO2Ok',
+       complete: false,
+       courier: [Object],
+       created: '2014-12-11T04:01:13Z',
+       kind: 'delivery',
+       manifest: [Object],
+       currency: 'usd',
+       pickup: [Object],
+       dropoff_deadline: '2014-12-11T05:01:13Z',
+       live_mode: false,
+       pickup_eta: '2014-12-11T04:12:00Z',
+       dropoff_eta: '2014-12-11T04:26:46Z',
+       id: 'del_K7ZM1OkQgoaBrF' } ],
+  next_href: null }
+```
 
 #### .cancel(deliveryId, fn)
 
